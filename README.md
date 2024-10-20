@@ -35,15 +35,12 @@ Currently, two official plugins are available:
 
 
 ## About the Project  :star2:
-![11](https://github.com/user-attachments/assets/81bdf33b-95b8-4ba0-b7f6-ab517ec54690)
-![3](https://github.com/user-attachments/assets/3d648acd-0c95-4d80-a257-4f1395edade7)
-![2](https://github.com/user-attachments/assets/35b35f6e-dbe2-4a3d-88a0-c14536688a4e)
-![1](https://github.com/user-attachments/assets/48151eb5-770f-4d8b-8149-c28a12a6fa39) 
+
 
 <br />
 
 # You can check app this link :point_down:
-https://full-stack-ai-trip-planner.vercel.app/
+
 
 
 ## Setup .env file
