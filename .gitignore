@@ -14,6 +14,7 @@ dist-ssr
 
 services
 firebaseConfig.js
+src/service/firebaseConfig.js
 
 # Editor directories and files
 .vscode/*
