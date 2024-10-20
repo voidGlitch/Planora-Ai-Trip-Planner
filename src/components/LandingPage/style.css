@@ -111,7 +111,7 @@ body {
 .animation-show {
   transform: translateY(50px);
   opacity: 0;
-  transition: transform 0.7s, opacity 0.7s; /* Updated transition */
+  transition: transform 0.7s, opacity 0.7s;
 }
 
 .tab.active .animation-show {
@@ -120,13 +120,19 @@ body {
 }
 
 .animation-show:nth-child(2) {
-  transition-delay: 0.3s;
+  transition-delay: 0.5s;
 }
 .animation-show:nth-child(3) {
-  transition-delay: 0.6s;
+  transition-delay: 1s;
 }
 .animation-show:nth-child(4) {
-  transition-delay: 0.9s;
+  transition-delay: 1.5s;
+}
+.animation-show:nth-child(5) {
+  transition-delay: 2s;
+}
+.animation-show:nth-child(6) {
+  transition-delay: 2.5s;
 }
 
 .library {

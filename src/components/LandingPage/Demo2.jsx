@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.css"; // Ensure you create this CSS file with the provided styles
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import CardList from "./CardList";
 
 function Demo2() {
+  useEffect(() => {
+    const listCards = document.querySelectorAll(".animation-show");
+
+    const handleScroll = () => {
+      // Handle card animations
+      listCards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          card.classList.add("active");
+        } else {
+          card.classList.remove("active");
+        }
+      });
+    };
+
+    // Add the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div
       className="flex flex-col items-center mx-57 gap-9"
@@ -27,11 +51,11 @@ function Demo2() {
           style={{
             backgroundColor: "red",
             color: "white",
-            border: "none",
-            fontSize: "1em",
+            borderRadius: "30px",
+            fontSize: "15px",
             height: "70%",
             widht: "70%",
-            padding: "10px 20px",
+            padding: "10px 40px",
             cursor: "pointer",
             transition: "transform 0.2s ease", // Smooth transition
           }}

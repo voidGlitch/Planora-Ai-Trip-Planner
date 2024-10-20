@@ -59,10 +59,14 @@ function CreateTrip() {
       !formData?.budget ||
       !formData?.traveler
     ) {
-      toast("Please fill all details!");
+      if (formData?.totalDays > 5) {
+        toast("Days Shouldn't be more than 5 days");
+      } else {
+        toast("Please fill all details properly!");
+      }
       return;
     }
-    toast("Form generated.");
+    toast("Request have been generated.Please Wait 🐝");
     setLoading(true);
     const FINAL_PROMPT = AI_PROMPT.replace("{location}", formData?.location)
       .replace("{totalDays}", formData?.totalDays)
@@ -79,6 +83,7 @@ function CreateTrip() {
     setLoading(true);
     const user = JSON.parse(localStorage.getItem("user"));
     const docId = Date.now().toString();
+    console.log("Its sending ");
     await setDoc(doc(db, "AiTrips", docId), {
       userSelection: formData,
       tripData: JSON.parse(TripData),
